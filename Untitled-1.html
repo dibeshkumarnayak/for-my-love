@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love - A Sixteen Thousand + Words, A Million Moments</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff0f3;
+            color: #4a4a4a;
+            overflow: hidden; /* Prevent entire screen scrolling */
+            height: 100vh;
+            margin: 0;
+        }
+        h1, h2, h3, .romantic-font {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar specifically for the letter container */
+        .letter-scroll-box::-webkit-scrollbar {
+            width: 8px;
+        }
+        .letter-scroll-box::-webkit-scrollbar-track {
+            background: #ffe5ed;
+            border-radius: 4px;
+        }
+        .letter-scroll-box::-webkit-scrollbar-thumb {
+            background: #ff80ab;
+            border-radius: 4px;
+        }
+        .letter-scroll-box::-webkit-scrollbar-thumb:hover {
+            background: #f43f5e;
+        }
+        /* Canvas for magical cursor trail */
+        #cursor-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+        }
+        /* Canvas for bottom-to-top floating hearts */
+        #hearts-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body class="relative h-screen w-screen flex flex-col justify-between selection:bg-pink-200 selection:text-pink-900">
+
+    <canvas id="hearts-canvas"></canvas>
+    <canvas id="cursor-canvas"></canvas>
+
+    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-30 z-0">
+        <div class="absolute top-10 left-10 w-72 h-72 bg-pink-300 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-rose-300 rounded-full blur-3xl animate-pulse" style="animation-duration: 6s;"></div>
+    </div>
+
+    <main class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 h-full flex flex-col justify-between w-full">
+        
+        <header class="text-center shrink-0 mb-4">
+            <span class="inline-block px-4 py-1 mb-2 text-xs font-medium tracking-widest uppercase bg-pink-100 text-pink-700 rounded-full shadow-sm">
+                Forever & Always
+            </span>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-rose-800 mb-2 tracking-tight">
+                For My Love - A Sixteen Thousand + Words, A Million Moments
+            </h1>
+            <p class="text-sm sm:text-base text-rose-600/90 italic max-w-xl mx-auto font-light">
+                "Out of all the hallways, lecture notes, and ordinary days, my favorite place in the entire world is wherever you are."
+            </p>
+        </header>
+
+        <section class="letter-scroll-box bg-white/90 backdrop-blur-md shadow-2xl rounded-3xl p-6 sm:p-10 md:p-12 border border-pink-100 relative overflow-y-auto flex-1 my-2">
+            
+            <div class="absolute top-4 right-4 flex items-center space-x-2">
+                <img src="https://i.pinimg.com/originals/c5/c6/73/c5c673dc3cb4ebd03675713b984a25cd.gif" alt="Cute Sticker" class="w-16 h-16 object-contain drop-shadow-sm">
+                
+            </div>
+
+            <div class="space-y-8 text-gray-700 leading-relaxed text-base sm:text-lg font-light">
+                
+                <div>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pinimg.com/originals/57/68/b4/5768b458d6c9c38676bfade7df010944.gif" alt="Sticker 1" class="w-20 h-20 object-contain">
+                        <h2 class="text-2xl font-semibold text-rose-700 romantic-font">Where It All Began</h2>
+                    </div>
+                    <p class="mb-4">
+                        My love, as i sit down to write this, my heart feels too full for ordinary words there is so much i want to say to you, so many quiet feelings that (accumulate) in the spaces between our conversations, that trying to capture it all in writing feels both impossible and deeply necessary. If I could, I would bottle up every single smile you have ever given me, every lingering glance across a crowded room, and every sweet word whispered when the rest of the world faded away.
+                    </p>
+                    <p class="mb-4">
+                        Kyu na thoda aapna words mai aa jau Do you remember how it all started? It feels like just yesterday ki like kal hei haam baath suru kia or aasha nahi lagta ki time bohat ghaldi jata hai tumara saath too time (time ka jasha nahi genshin ka update ka jasha jatha hai bohat ghaldi aa kai chala jatha hai sad life ). College days are like sweet for me tumara chota chota kaam karna mara lia , kuch naya cheej trys karna mara lia like tuma yaad hoga kindarjoy but for me koi kindar joy laadai too ma too uss ka gulam baan jau ,the entire landscape of my life changed the galat moment mai sameer na bola. Ki dibesh tujha koi idea hai!! ki koi tujha bohat psnd karta hai!! Suddenly, the background noise disappeared, and all that remained was the cadence of your voice, the warmth of your laughter, and the gentle grace you carried with you everywhere.
+                    </p>
+                    <p>
+                        You brought a kind of freedom into my life i never knew i was searching for it wasn’t a loud, chaotic freedom aab too maan kar ta hai kei tumm bolo!! mai sunnu tumara saari baath but that not should be in one side tuma bhi sunn na padga i mean tuma mara love romance With you, I don't have to pretend, I don't have to guard my words, and I can simply exist as my truest, thank u love u (rama sunn raha hoo naaa i love uuuuuu ). That is the greatest gift anyone has ever given me. my love, you are my home, my safe harbor, and the most beautiful chapter of my life. My heart is yours, now and forever, and I am endlessly grateful for every moment we share together. love uuuuuuuuuuuuuuuuuuuu 
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-pink-100">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://media.tenor.com/CfbW8qVkkwsAAAAM/mocha-and-milk.gif" alt="Sticker 2" class="w-20 h-20 object-contain">
+                        <h2 class="text-2xl font-semibold text-rose-700 romantic-font">The Little Details That Captivated Me</h2>
+                    </div>
+                    <p class="mb-4">
+                        People talk about grand love stories as if they are made of monumental cinematic events, but tumara story poora anime style hai, kitna romance, kitna over thinking, or kitna crush or ha aabhi aabhi ma tumara saath call ma bhi hu too aabhi aabhi tumna bola ki tumara feeling bada (ma aapna 100 percent duga )  but true love—the kind we share—is built in the quiet by saying (rama I LOVE UUUUUUUUU). I find myself falling in love with you all over again (october or present), not just once a day, but in a hundred tiny moments u done fro me that nobody else ever gets to witness.
+                    </p>
+                    <p class="mb-4">
+                        I catch myself smiling at nothing at all during the middle of an ordinary day even class ma bhi or ptta hai mana too tuma chandigarh university ma bhi search kar ta hu koi tumara jasha mill jai (or tum akala nahi hoo thik hai kyu ki ma tumha har jaga sai dhakta hu gitam mai aagar tum akala hoo too ma rahuga tara saath kyu ki mujha aacha nahi lagta koi bhi simple rahai or overthinking kara or tum my love mara lia open book hoo ) okay aabhi letter mai aata hai!!! simply remembering the sound of your laugh your cute smile or woo chota teeth bohat BOHAT attractive hai or or or tuuuummmmm ittna bright shine ,cute ,white ,charming!!! aab ma try karta hu kasha ya long distance mai bhi something i doo kii ma tara chota sa bhi cheej ko catch you by surprise. I notice the delicate way the kajal frames your expressive eyes, telling stories before you even speak a single word. And I adore that effortless, beautiful gulabi blush ( i think ya natural hai kyu ki tum white hoo) that blooms across your cheeks or nose ma bhi. Those are the moments when my heart swells to the point of breaking, because in those fleeting seconds, you are entirely, purely, beautifully yourself.
+                    </p>
+                    <p>
+                        Rama are u happy ??,tum satisfied hoo ??,tuma tumara goal achieve hua ??, . The way your eyes light up when you talk about something you're passionate about in club room woo stories or thoughts or woooo sweet kinder joy thats makes me happy, and the comforting warmth of your hand sliding into mine—these are the treasures I keep safe in the gallery of my mind.
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-pink-100">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://64.media.tumblr.com/942b41708eb651e07267d871fea16cf0/b98f14cbe170314a-ad/s400x600/255d350ed1034ea95ff52a8645428d29ebfe327d.gif" alt="Sticker 3" class="w-20 h-20 object-contain">
+                        <h2 class="text-2xl font-semibold text-rose-700 romantic-font">Through Every Season and Storm</h2>
+                    </div>
+                    <p class="mb-4">
+                        Life isn't always smooth sailing, and we both know there have been days when the weight of responsibilities, exams ka time, and uncertainties felt heavy on our shoulders or woo club kai kaam (oooo ha tuma yaad hai kli joo ham nahi paint kia tha woo time woo events or woo light touch i think woo tumaera lia woo 1 festivel jasha hoo ga or ussi ka karana tumara friends too problem hotha hai ). But do you know what my favorite thing about us is? It’s how effortlessly we become a boyfriend and girlfriend . Whenever the outside world feels too loud or demanding, just hearing you say my name (kiii DIBESH i love uuuuuuuuuuuuuuuu )or feeling your gentle presence nearby is enough to anchor me. like heart rise karta hai , shock feel hota hai...... 
+                    </p>
+                    <p class="mb-4">
+                        You have this incredible, innate magic about you that turns ordinary days into poetry my magical queen aiiiii haiiiiiii!!!. A walk across campus transforms into a core memory just because you're holding my arm on shoe fest event jaab tum sadhi mai aai tha taab mara ko yaad hai ki mana tumar lia (flowers lia tha kasss maaa tumha da datha my badluck koi na mara saath too hotha rahata hai ). or woo arku coffee ka pass rahna becomes a romantic think kasha bolu like ritual because across the road ka pass side ma wait kar kai assignment ka bahana bol kai mara hiii ka lia rahana , your eyes are looking back at me with kindness and affection. You make the mundane magnificent.
+                    </p>
+                    <p>
+                        I want you to know that I am here for you through every high and every low, through every milestone we achieve and every obstacle we overcome. my hand is in yours, and my heart is permanently, irreversibly aligned with yours. RAMA I LOVE UUUUUUUUUUUUUUUUUUUU or tum kitna ganda hoooooooooo villon ka jasha but mari villon 
+                    </p>
+                </div>
+
+                <div class="pt-6 border-t border-pink-100">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="https://i.pinimg.com/originals/39/6d/8c/396d8cf19235b7b437d1067045a63b5a.gif" alt="Sticker 4" class="w-20 h-20 object-contain">
+                        <h2 class="text-2xl font-semibold text-rose-700 romantic-font">Building Our Tomorrows </h2>
+                    </div>
+                    <p class="mb-4">
+                        or aabhi thida future ka bara mai bhi thoda baath hoo jai , dreaming about futures, careers, and the days ahead, my mind always make me happy and wanders back to the same destination: a life where you are right by my side. Every dream I build like hamara family like job sai aao gai mara kya boluga or ma job sai aau too tum pyaar sai pucho gai 1. dinner 2. bath 3. meeeeeeeeeee     ma boluga option 3 , kitna aacha lagaga jaab ma ya question puchu or tum bologai optionnnnnn tum aapna choice sai bola na (tumara bath wala option aacha hai ) okay every aspiration I chase, has your happiness woven into its foundation. I want to celebrate your victories, hold you close when things don't go as planned, and build a world filled with warmth, laughter, family, love, joyyyy.
+                    </p>
+                    <p class="mb-4">
+                        This little corner of the internet is just a small peek into the huge world of love I carry for you in my heart. I wanted to build something just for you—a quiet place away from the noise of the world. Par isey banate waqt mujhe ehsaas hua ki humare pyaar ko kisi screen par dikhana kitna namumkin hai. Websites can be coded and photos can save a moment in time, lekin jo main tumhare liye mehsoos karta hoon, woh in screens aur lafzon se kahin zyada bada hai. There is no storage in the world big enough to hold how much you mean to me.
+                    </p>
+                    <p>
+                        My love for you doesn't live on a screen; it lives in my everyday life. Yeh subah aankh khulte hi aane wale tumhare pehle khayal mein hai, aur tumhari aawaaz sun kar milne wale uss gehre sukoon mein hai. It is in how my whole day gets better the moment you smile at me. It lives in every breath I take, meri har uss khamosh dua mein jo main tumhari khushi aur salamaati ke liye maangta hoon, and in every single beat of my heart. You have become the best part of my days, my favorite habit, and the safest home I have ever known.
+                    </p>
+                </div>
+
+                <div class="pt-8 border-t border-pink-100 text-center bg-pink-50/70 p-6 rounded-2xl border border-pink-200">
+                    <h3 class="text-xl font-semibold text-rose-800 mb-2 romantic-font">One Last Secret...</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Click the button below whenever you need a reminder of how much you are cherished.</p>
+                    <button onclick="triggerLovePopup()" class="bg-rose-600 hover:bg-rose-700 text-white font-medium px-6 py-3 rounded-full shadow-lg shadow-rose-600/30 transition-all duration-300 transform hover:scale-105 active:scale-95 cursor-pointer">
+                        Open My Final Promise 💌
+                    </button>
+                    <div id="secret-popup" class="hidden mt-4 p-4 bg-white rounded-xl border border-pink-200 text-rose-800 romantic-font text-base italic transition-all duration-500 shadow-sm">
+                        "No matter where life takes us after today, my heart is permanently booked with you. I love you more than words can ever say." 💕
+                    </div>
+                </div>
+
+                <div class="pt-4 text-center sm:text-left">
+                    <p class="text-xl font-medium text-rose-800 romantic-font mb-1">
+                        Forever and always yours,
+                    </p>
+                    <p class="text-2xl font-bold text-rose-700 romantic-font tracking-wide">
+                        tumara future husband ❤️
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <footer class="relative z-10 text-center py-2 text-rose-500 text-xs shrink-0 bg-transparent">
+            <p>Crafted with endless devotion, custom built just for you. ✨</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // Interactive popup toggle
+        function triggerLovePopup() {
+            const popup = document.getElementById('secret-popup');
+            popup.classList.toggle('hidden');
+        }
+
+        // --- Bottom-to-Top Floating Hearts Cascade Animation ---
+        const heartsCanvas = document.getElementById('hearts-canvas');
+        const heartsCtx = heartsCanvas.getContext('2d');
+
+        function resizeHeartsCanvas() {
+            heartsCanvas.width = window.innerWidth;
+            heartsCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeHeartsCanvas);
+        resizeHeartsCanvas();
+
+        let floatingHearts = [];
+        const maxHearts = 22;
+
+        function createFloatingHeart() {
+            return {
+                x: Math.random() * heartsCanvas.width,
+                y: heartsCanvas.height + 60,
+                size: Math.random() * 35 + 30, // Increased size range for larger floating hearts
+                speedY: Math.random() * 1.0 + 0.5,
+                speedX: (Math.random() - 0.5) * 0.6,
+                opacity: Math.random() * 0.4 + 0.2,
+                color: ['#ff80ab', '#ff4081', '#f43f5e', '#fb7185'][Math.floor(Math.random() * 4)]
+            };
+        }
+
+        for (let i = 0; i < maxHearts; i++) {
+            floatingHearts.push({
+                x: Math.random() * heartsCanvas.width,
+                y: Math.random() * heartsCanvas.height,
+                size: Math.random() * 35 + 30,
+                speedY: Math.random() * 1.0 + 0.5,
+                speedX: (Math.random() - 0.5) * 0.6,
+                opacity: Math.random() * 0.4 + 0.2,
+                color: ['#ff80ab', '#ff4081', '#f43f5e', '#fb7185'][Math.floor(Math.random() * 4)]
+            });
+        }
+
+        function drawHeart(ctx, x, y, size, color, opacity) {
+            ctx.save();
+            ctx.globalAlpha = opacity;
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            let d = size;
+            ctx.moveTo(x, y + d / 4);
+            ctx.bezierCurveTo(x, y, x - d / 2, y, x - d / 2, y + d / 4);
+            ctx.bezierCurveTo(x - d / 2, y + d / 2, x, y + (d * 3) / 4, x, y + d);
+            ctx.bezierCurveTo(x, y + (d * 3) / 4, x + d / 2, y + d / 2, x + d / 2, y + d / 4);
+            ctx.bezierCurveTo(x + d / 2, y, x, y, x, y + d / 4);
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function animateHearts() {
+            heartsCtx.clearRect(0, 0, heartsCanvas.width, heartsCanvas.height);
+
+            for (let i = 0; i < floatingHearts.length; i++) {
+                let h = floatingHearts[i];
+                h.y -= h.speedY;
+                h.x += Math.sin(h.y * 0.02) * 0.5 + h.speedX;
+
+                if (h.y < -60) {
+                    floatingHearts[i] = createFloatingHeart();
+                }
+
+                drawHeart(heartsCtx, h.x, h.y, h.size, h.color, h.opacity);
+            }
+
+            requestAnimationFrame(animateHearts);
+        }
+
+        animateHearts();
+
+        // --- Magical Cursor Particle Trail Effect ---
+        const cursorCanvas = document.getElementById('cursor-canvas');
+        const cursorCtx = cursorCanvas.getContext('2d');
+
+        let particles = [];
+
+        function resizeCursorCanvas() {
+            cursorCanvas.width = window.innerWidth;
+            cursorCanvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCursorCanvas);
+        resizeCursorCanvas();
+
+        window.addEventListener('mousemove', (e) => {
+            addCursorParticle(e.clientX, e.clientY);
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (e.touches.length > 0) {
+                addCursorParticle(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        }, { passive: true });
+
+        function addCursorParticle(x, y) {
+            const colors = ['#ff80ab', '#ff4081', '#d81b60', '#ffb6c1', '#ffffff'];
+            particles.push({
+                x: x + (Math.random() * 10 - 5),
+                y: y + (Math.random() * 10 - 5),
+                size: Math.random() * 8 + 4,
+                speedX: (Math.random() - 0.5) * 2,
+                speedY: (Math.random() - 0.5) * 2 - 1,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                alpha: 1,
+                decay: Math.random() * 0.03 + 0.01
+            });
+        }
+
+        function animateCursorParticles() {
+            cursorCtx.clearRect(0, 0, cursorCanvas.width, cursorCanvas.height);
+
+            for (let i = particles.length - 1; i >= 0; i--) {
+                let p = particles[i];
+                p.x += p.speedX;
+                p.y += p.speedY;
+                p.alpha -= p.decay;
+
+                if (p.alpha <= 0) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+
+                cursorCtx.save();
+                cursorCtx.globalAlpha = p.alpha;
+                cursorCtx.fillStyle = p.color;
+                cursorCtx.beginPath();
+                cursorCtx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                cursorCtx.fill();
+                cursorCtx.restore();
+            }
+
+            requestAnimationFrame(animateCursorParticles);
+        }
+
+        animateCursorParticles();
+    </script>
+</body>
+</html>
